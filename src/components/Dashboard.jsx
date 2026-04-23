@@ -24,7 +24,7 @@ export function Dashboard({ session }) {
   const [isClearing, setIsClearing] = useState(false);
 
   const webhookUrl = useMemo(
-    () => `http://localhost:8080/hook/${session.id}`,
+    () => `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/hook/${session.id}`,
     [session.id]
   );
 
